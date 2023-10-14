@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Management System</title>
+    <style>
+        .movie {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+
+<body>
+    <h1>Movie Management System</h1>
+    <p>Please look at the console</p>
+    <div id="message-container"></div>
+    <div id="movie-container"></div>
+    <script src="script.js"></script>
+    <script>
+        // Create containers for messages and movies
+        const messageContainer = document.getElementById("message-container");
+        const movieContainer = document.getElementById("movie-container");
+
+        // Capture the console output and display it in the message container
+        console.log = function (message) {
+            if (messageContainer) {
+                const messageElement = document.createElement("p");
+                messageElement.textContent = message;
+                messageContainer.appendChild(messageElement);
+            }
+        };
+
+        // Execute the script
+        // Note: Ensure that script.js contains the entire JavaScript code as provided earlier
+        try {
+            eval(document.querySelector('script[src="script.js"]').innerHTML);
+        } catch (error) {
+            console.error(error);
+        }
+    </script>
+</body>
+</html>
